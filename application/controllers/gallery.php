@@ -26,7 +26,15 @@ class Gallery extends CI_Controller {
         $this->load->view('gallery', array("categories" => $categories, "images" => $images));
         $this->load->view('footer');
     }
-
+    public function createCategory(){
+        
+        //Load URL Helper Class
+        $this->load->helper('url');
+        
+        $this->load->view('header');
+        $this->load->view('catImageInsert');
+        $this->load->view('footer');
+    }
 }
 
 /* End of file welcome.php */
