@@ -218,6 +218,33 @@ header{
     height: 100%;
     position: absolute;
 }
+#content #category-form{
+    display: block;
+    position: relative;
+}
+#image-display{
+    margin-top: 5%;
+    width: 60%;
+    position: relative;
+    float: left;
+    display: inline-block;
+}
+#image-display .image-holder{
+    float: left;
+    margin: 1%;
+    border-radius: 2%;
+}
+#image-display img{
+    width: 150px;
+    height: 150px;
+    padding: 2%;
+    border: 1px solid;
+}
+#image-create{
+    margin-top: 5%;
+    float: left;
+    width: 20%;
+}
 footer{
     position: absolute;
     z-index: 100;
@@ -242,30 +269,6 @@ footer #footer{
     position: relative;
     width: 100%;
     display: inline-block;
-}
-#gallery #side_menu{
-    margin-top: 5%;
-    width: 20%;
-    position: relative;
-    float:left;
-}
-#gallery #side_menu ul{
-    margin: 0%;
-    padding: 0;
-}
-#gallery #side_menu ul li{
-    color: #222;
-    border-bottom: solid #ccc thin;
-    padding: 5% 35% 5% 5%;
-    width: 50%;
-}
-#gallery #side_menu ul li:hover ,#gallery #side_menu ul li:hover > a{
-    color: #111;
-    font-size: 16px;
-}
-#gallery #side_menu ul a:link, #gallery #side_menu ul a:visited, #gallery #side_menu a.active{
-    color: #222;
-    font-size: 17px;
 }
 #image_gallery #slider{
     margin: 5% 0;

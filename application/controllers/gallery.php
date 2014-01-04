@@ -26,15 +26,38 @@ class Gallery extends CI_Controller {
         $this->load->view('gallery', array("categories" => $categories, "images" => $images));
         $this->load->view('footer');
     }
-    public function createCategory(){
-        
+
+    public function createCategory($id = 1) {
+        // Load CategoryModel
+        $this->load->model('Categorymodel');
+
+        // Get Images related to the Category
+        $this->load->model('Imagesmodel');
+        $images = $this->Imagesmodel->categoryIdToImages($id);
+
         //Load URL Helper Class
+        $categories = $this->Categorymodel->getCategories(null);
         $this->load->helper('url');
-        
         $this->load->view('header');
-        $this->load->view('catImageInsert');
+        $this->load->view('catImageInsert', array('categories' => $categories, 'images' => $images, 'id' => $id));
         $this->load->view('footer');
     }
+
+    public function validateCategory() {
+        $this->load->model('Categorymodel');
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('name', 'Name', 'required|is_unique[category.name]');
+        $this->form_validation->set_message('required', "Category Cannot be Empty");
+        $this->form_validation->set_message('is_unique', "Category Already Exists");
+        // Check if the post request is made and data entered is valid
+        if ($this->form_validation->run() == TRUE) {
+            $data = $this->Categorymodel->insertCategory($_POST['name']);
+            echo json_encode($data);
+        }else{
+            echo json_encode(array('message'=>trim(validation_errors())));
+        }
+    }
+
 }
 
 /* End of file welcome.php */

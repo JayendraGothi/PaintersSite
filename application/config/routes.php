@@ -40,7 +40,9 @@
 
 $route['default_controller'] = "main";
 $route['404_override'] = '';
+$route['gallery/([a-z]+)/(:num)'] = "gallery/$1/$2";
 $route['gallery/(:num)'] = "gallery/index/$1";
+$route['image/([a-z]+)/([a-z]+)/(:num)'] = "gallery/$1/$2/$3";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

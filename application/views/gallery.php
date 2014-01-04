@@ -4,7 +4,9 @@
             <ul>
                 <?php
                 foreach ($categories as $category) {
-                    echo '<li><a href = "#">' . $category["name"] . '</a></li>';
+                    echo '<li><a href = "';
+                    echo base_url() . 'gallery/' . $category['id'] . '">';
+                    echo $category["name"] . '</a></li>';
                 }
                 ?>
             </ul>
@@ -22,7 +24,7 @@
             <div id="bigger_image">
                 <div id="bigger-image-background">
                     <div class="product">
-                        <img class="magniflier" src="<?php echo base_url() ?>/CSS/Images/main_slider.jpg" max-width="auto"/>
+                        <img class="magniflier" src="" max-width="auto"/>
                     </div>
                 </div>
             </div>

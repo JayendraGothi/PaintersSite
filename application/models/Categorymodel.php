@@ -68,7 +68,11 @@ class Categorymodel extends CI_Model {
             if (!$this->categoryExists($category)) {
                 $this->name = $category;
                 $this->db->insert('category', $this);
-                return array("error" => false, "message" => "Successfully Inserted");
+                $data = $this->db->get_where('category', array('id' => $this->db->insert_id()))->result_array();
+                return array('id' => $data[0]['id'],
+                    'name' => $data[0]['name'],
+                    'message' => '<p>Category Successfully Added</p>'
+                );
             } else {
                 return array("error" => true, "message" => "Category Already Exists");
             }

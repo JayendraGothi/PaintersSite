@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Welcome to Adithya's Gallery</title>
         <link rel="stylesheet" href="<?php echo base_url()?>/CSS/main.css" />
+        <link rel="stylesheet" href="<?php echo base_url()?>/CSS/Common.css" />
         <link rel="stylesheet" href="<?php echo base_url()?>/CSS/normalize.css"/>
         <script type="text/javascript" src="<?php echo base_url()?>/JS/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>/JS/jquery.event.drag-2.2.js"></script>

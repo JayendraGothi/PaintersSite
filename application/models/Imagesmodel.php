@@ -62,7 +62,16 @@ class Imagesmodel extends CI_Model {
             return $records->result_array();
         }
     }
-
+    
+    function deleteImage($id){
+        if(!is_null($id)){
+            $record = $this->db->delete('images', array('id'=>$id));
+            if(isset($record)){
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
 ?>

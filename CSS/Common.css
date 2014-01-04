@@ -1,0 +1,92 @@
+/* 
+    Document   : Common
+    Created on : 3 Jan, 2014, 10:33:18 PM
+    Author     : jayendra
+    Description:
+        Purpose of the stylesheet follows.
+*/
+.image-operations a{
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.image-operations a:link, 
+.image-operations a:visited, 
+.image-operations a.active{
+    color: white;
+}
+.form-error{
+    color: red;
+
+}
+.image-operations{
+    padding: 5px 10px;  
+    background-color: #005090;
+    color: white;
+}
+.button{
+    background-color: #005090;
+    color: white;
+}
+.button:hover{
+    background: #dfe9ec;
+    color: #414848;
+}
+.button:focus{
+    background: #dfe9ec;
+    color: #414848;
+}
+input{
+    padding: 5px 10px;
+    font-family: "HelveticaNeue-Light",
+        "Helvetica Neue Light",
+        "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #9d9e9e;
+    background: #fff;
+    border-radius: 5px;
+    border: 0px;
+    display: block;
+}
+input:hover {
+    background: #dfe9ec;
+    color: #414848;
+}
+input:focus {
+    background: #dfe9ec;
+    color: #414848;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+    -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+}
+
+
+
+/*Side Menu CSS*/
+#side_menu{
+    margin-top: 5%;
+    width: 20%;
+    position: relative;
+    float:left;
+}
+#side_menu ul{
+    margin: 0%;
+    padding: 0;
+}
+#side_menu ul li{
+    color: #222;
+    border-bottom: solid #ccc thin;
+    padding: 5% 35% 5% 5%;
+    width: 50%;
+}
+#side_menu ul li:hover ,#gallery #side_menu ul li:hover > a{
+    color: #111;
+    font-size: 16px;
+}
+#side_menu ul a:link, #gallery #side_menu ul a:visited, #gallery #side_menu a.active{
+    color: #222;
+    font-size: 17px;
+}
+/*End Side Menu*/
