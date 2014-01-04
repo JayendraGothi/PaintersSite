@@ -1,5 +1,8 @@
 <div id="content">
+    <!--Side Menu-->
     <div id="side_menu">
+        
+        <!--Form to enter new Category to data base-->
         <div id="category-form">
             <h2>Create Categories</h2>
             <div class="form-error">
@@ -12,7 +15,9 @@
                 <input type="submit" value="Create" class="button"/>
             </form>
         </div>
-
+        <!--Category Form End-->
+        
+        <!--List of all the Categories-->
         <ul>
             <?php
             foreach ($categories as $category) {
@@ -22,7 +27,12 @@
             }
             ?>
         </ul>
+        <!--Category List End-->
+        
     </div> 
+    <!--Side Menu Ends-->
+    
+    <!--Display Images related to the Category-->
     <div id="image-display">
         <?php foreach ($images as $image) { ?>
             <div class="image-holder">
@@ -35,6 +45,10 @@
             </div>
         <?php } ?>
     </div>
+    <!--Images related to category Ends-->
+    
+    <!--From to add Image to DataBase
+        This image id directly linked to the Category selected-->
     <div id="image-create">
         <div id="image-form">
             <h2>Add Image</h2>
@@ -48,4 +62,6 @@
             </form>
         </div>
     </div>
+    <!--Add Image Form ends-->
+    
 </div>
