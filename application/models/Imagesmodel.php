@@ -11,7 +11,7 @@
  * @author jayendra
  */
 class Imagesmodel extends CI_Model {
-
+    var $id = 0;
     var $url = '';
     var $category_id = 0;
 
@@ -25,11 +25,14 @@ class Imagesmodel extends CI_Model {
      * @param type $url : url of the image
      * @param type $category_id : category of image
      */
-    function insertImage($url, $category_id) {
+    function insertImage($url, $category_id, $image_id) {
+        $this->id = $image_id;
         $this->url = $url;
         $this->category_id = $category_id;
         if ($this->validateImage()) {
             $this->db->insert('images', $this);
+            $data = $this->db->get_where('images',array('id' => $this->db->insert_id()));
+            return $data->result_array();
         }
     }
 
@@ -58,19 +61,31 @@ class Imagesmodel extends CI_Model {
      */
     function categoryIdToImages($id) {
         if (!is_null($id)) {
-            $records = $this->db->get_where('images', array('category_id'=> $id));
+            $records = $this->db->get_where('images', array('category_id' => $id));
             return $records->result_array();
         }
     }
-    
-    function deleteImage($id){
-        if(!is_null($id)){
-            $record = $this->db->delete('images', array('id'=>$id));
-            if(isset($record)){
+
+    function deleteImage($id) {
+        if (!is_null($id)) {
+            $record = $this->db->delete('images', array('id' => $id));
+            if (isset($record)) {
                 return true;
             }
         }
         return false;
+    }
+    
+    /**
+     * 
+     * @return Id having value max among all the data in table Images
+     */
+    function getUniqueId(){
+        $this->db->select_max('id','Max_id');
+        $result = $this->db->get('images');
+        $result = $result->first_row();
+        $id = $result->Max_id+1;
+        return $id;
     }
 }
 

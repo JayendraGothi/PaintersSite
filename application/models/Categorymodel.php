@@ -95,5 +95,21 @@ class Categorymodel extends CI_Model {
         }
         return false;
     }
+    /**
+     * Check id the id provided holds any category
+     * if yes
+     *      return true
+     * else
+     *      return false
+     * @param type $id : category_id
+     * 
+     */
+    function categoryExistsForId($id){
+        $result = $this->db->get_where('category', array('id'=>$id));
+        if(isset($result) && !is_null($result)){
+            return true;
+        }
+        return false;
+    }
 
 }

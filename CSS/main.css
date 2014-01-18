@@ -10,7 +10,10 @@ and open the template in the editor.
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-
+.bar {
+    height: 18px;
+    background: green;
+}
 html,
 button,
 input,

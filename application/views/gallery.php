@@ -31,3 +31,9 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="<?php echo base_url(); ?>/JS/jquery.event.drag-2.2.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>/JS/jquery.event.drop-2.2.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>/JS/jquery.roundabout.js"></script>
+<script type = "text/javascript" src="<?php echo base_url(); ?>/JS/magnify.js"></script>
+<script type = "text/javascript" src="<?php echo base_url(); ?>/JS/magnifier.js"></script>
+<script type = "text/javascript" src="<?php echo base_url(); ?>/JS/gallery.js"></script>
